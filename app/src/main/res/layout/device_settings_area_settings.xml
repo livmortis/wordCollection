@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 标题 -->
+    <!--<com.mm.android.common.title.CommonTitle-->
+        <!--android:id="@+id/area_settings_title"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?attr/titleHeight"/>-->
+
+
+
+    <RelativeLayout
+        android:id="@+id/motion_view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/motion_menu"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/motion_delete"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/motion_edit"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:gravity="center"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_above="@id/motion_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/motion_window_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+                <com.example.xzy.wordidtyandcltn.CustomScrollView
+                    android:id="@+id/motion_vScroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none"
+                    android:fillViewport="false">
+                    <com.example.xzy.wordidtyandcltn.CustomHScrollView
+                        android:id="@+id/motion_hScroll"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbars="none"
+                        >
+                        <FrameLayout
+                            android:id="@+id/motion_window_parent"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical" >
+
+                            <!-- 播放组件 -->
+                            <!--<com.mm.uc.PlayWindow-->
+                                <!--android:id="@+id/playwindow"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--DH_Toolbar_Height="0dp">-->
+                            <!--</com.mm.uc.PlayWindow>-->
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/america"/>
+
+                            <com.example.xzy.wordidtyandcltn.MotionAreaView
+                                android:id="@+id/motion_areaView"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"/>
+                        </FrameLayout>
+
+                    </com.example.xzy.wordidtyandcltn.CustomHScrollView>
+                </com.example.xzy.wordidtyandcltn.CustomScrollView>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_above="@id/motion_window_layout"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:gravity="center_vertical"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>
