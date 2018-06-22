@@ -3,12 +3,57 @@
 
     <item
         is-multidex="true"
-        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/26.0.0-alpha1/jars/classes.jar"
+        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-26.0.0-alpha1_cef0096adda7b239e35ea45526d157716e2fb232/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
+        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-26.0.0-alpha1_52baa2cfdc14c8cca48da1eefed9dcd971cb8d81/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/26.0.0-alpha1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
         sha1="9935891f23923f39d002087085d9696568a9f657">
-        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-26.0.0-alpha1_aa53a395ac4a3219201daabe810f6073e1e66b0f/classes.dex" />
+        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-26.0.0-alpha1_0ebaa39c287fc5efe613ae3cdb0162985d88c284/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="952944218ecedea1554a513dec0c14d570642843">
+        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-26.0.0-alpha1_9fa4bd53cb7c8f189be6eb07a9db8aec8b15aaf8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/exploded-aar/com.android.support/support-v4/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-26.0.0-alpha1_766fd88fdc9f529f80c7ddadfdac31f352a99613/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-26.0.0-alpha1_c73ba361aaa7ef5b9dc2662e870060da78fc8cf6/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -17,97 +62,52 @@
         optimize="true"
         revision="26.0.2"
         sha1="023ee503b631f69511e335a061ea008f8da60f40">
-        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-26.0.0-alpha1_c6e502c023005610c3cdbedd84ccf77f1e26e9bb/classes.dex" />
+        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-26.0.0-alpha1_c6e502c023005610c3cdbedd84ccf77f1e26e9bb/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/26.0.0-alpha1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
-        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-26.0.0-alpha1_fa09ead7d9d603af392a6ea307082667ac25ed46/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/26.0.0-alpha1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="952944218ecedea1554a513dec0c14d570642843">
-        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-26.0.0-alpha1_0c4289fa9ba59548f70810aaf10e745fc23149e1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="926d2180a57cbb33a1ad2c6f98e812ba829c73b4">
-        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d9d996a4356c19802a22df4d838ce1716d476b6a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/exploded-aar/com.android.support/support-fragment/26.0.0-alpha1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
-        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-26.0.0-alpha1_9c30d7e3a5121bfdc21be9f4d057bdef1e7697f5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="d32896a186de3b618c9e0009f09e778fe6afc176">
-        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_c127793895d63a168518c6fa28a5b306d007d694/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/26.0.0-alpha1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
-        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-26.0.0-alpha1_79baad17639aa21907aaafbb994710954570fc98/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/26.0.0-alpha1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
-        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-26.0.0-alpha1_83f24863130068b78f951eb7d0168ed7b4b62515/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/exploded-aar/com.android.support/support-compat/26.0.0-alpha1/jars/classes.jar"
+        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/exploded-aar/com.android.support/support-compat/26.0.0-alpha1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
         sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
-        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-26.0.0-alpha1_862ba7c7aaa8e7e99a8f758beec87c9046c81950/classes.dex" />
+        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-26.0.0-alpha1_1100b8690108055ce1b2f46ad8c1f86b0c6a30f9/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/26.0.0-alpha1/jars/classes.jar"
+        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/exploded-aar/com.android.support/support-fragment/26.0.0-alpha1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
-        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-26.0.0-alpha1_ceb785490347ef8e608381139ade9df08bde91ee/classes.dex" />
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-26.0.0-alpha1_f7883f39670a8dce01ef71376288f171c90c0a91/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/exploded-aar/com.android.support/support-v4/26.0.0-alpha1/jars/classes.jar"
+        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/26.0.0-alpha1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-26.0.0-alpha1_37993c11a61a18f3215cc9695445942e10bc57fe/classes.dex" />
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-26.0.0-alpha1_1aa30059dc2ffd4e52ef6684181d649918d84158/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b6c485f67697d42a65b9e6eeb0c45328dd2ba669">
+        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_f027d037177f73ce4c7cfd97b55bfe6f50b9def1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e5809ad7300b1bac94f573782e5f90d84cf823aa">
+        <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_34b743fa09edfcf3c032d346cff7076fb94ab707/classes.dex" />
     </item>
 
 </items>

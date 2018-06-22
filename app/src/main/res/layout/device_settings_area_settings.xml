@@ -26,19 +26,24 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/motion_delete"
+                android:id="@+id/area_confirm"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:gravity="center"/>
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="confirm"/>
+
 
             <TextView
-                android:id="@+id/motion_edit"
+                android:id="@+id/area_clear"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="1dp"
                 android:gravity="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:text="clear"/>
         </LinearLayout>
 
         <RelativeLayout
@@ -46,19 +51,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <RelativeLayout
-                android:id="@+id/motion_window_layout"
+                android:id="@+id/window_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="horizontal"
                 >
-                <com.example.xzy.wordidtyandcltn.CustomScrollView
+                <com.example.xzy.wordidtyandcltn.view.CustomScrollView
                     android:id="@+id/motion_vScroll"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scrollbars="none"
                     android:fillViewport="false">
-                    <com.example.xzy.wordidtyandcltn.CustomHScrollView
+                    <com.example.xzy.wordidtyandcltn.view.CustomHScrollView
                         android:id="@+id/motion_hScroll"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -78,23 +83,24 @@
                                 <!--DH_Toolbar_Height="0dp">-->
                             <!--</com.mm.uc.PlayWindow>-->
                             <ImageView
+                                android:id="@+id/iv"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:src="@drawable/america"/>
 
-                            <com.example.xzy.wordidtyandcltn.MotionAreaView
+                            <com.example.xzy.wordidtyandcltn.view.AreaView
                                 android:id="@+id/motion_areaView"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_centerInParent="true"/>
                         </FrameLayout>
 
-                    </com.example.xzy.wordidtyandcltn.CustomHScrollView>
-                </com.example.xzy.wordidtyandcltn.CustomScrollView>
+                    </com.example.xzy.wordidtyandcltn.view.CustomHScrollView>
+                </com.example.xzy.wordidtyandcltn.view.CustomScrollView>
             </RelativeLayout>
 
             <TextView
-                android:layout_above="@id/motion_window_layout"
+                android:layout_above="@id/window_layout"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:paddingLeft="25dp"
