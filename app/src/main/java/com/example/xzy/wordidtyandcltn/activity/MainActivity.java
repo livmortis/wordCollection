@@ -8,6 +8,10 @@ import android.widget.Button;
 
 import com.example.xzy.wordidtyandcltn.R;
 
+/**
+ * Created by livmortis on 6/22/18.
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

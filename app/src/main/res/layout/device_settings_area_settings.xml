@@ -57,11 +57,38 @@
                 android:gravity="center"
                 android:orientation="horizontal"
                 >
+
+                <RelativeLayout
+                    android:id="@+id/empty_goto_camera"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/empty_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/ic_launcher"
+                        />
+
+                    <TextView
+                        android:id="@+id/empty_tv"
+                        android:layout_marginBottom="100dp"
+                        android:layout_below="@+id/empty_iv"
+                        android:layout_marginTop="50dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="take photo, than drag the area on your photo"
+                        />
+                </RelativeLayout>
+
+
                 <com.example.xzy.wordidtyandcltn.view.CustomScrollView
                     android:id="@+id/motion_vScroll"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scrollbars="none"
+                    android:visibility="gone"
                     android:fillViewport="false">
                     <com.example.xzy.wordidtyandcltn.view.CustomHScrollView
                         android:id="@+id/motion_hScroll"
@@ -86,6 +113,7 @@
                                 android:id="@+id/iv"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:scaleType="fitXY"
                                 android:src="@drawable/america"/>
 
                             <com.example.xzy.wordidtyandcltn.view.AreaView
