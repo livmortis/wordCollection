@@ -97,7 +97,7 @@
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="d79368c03051eda565048a9a090cbc2fb729fa7a">
+        sha1="0c5052b74278f12d03d17dfaec8439b5936ad899">
         <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_f027d037177f73ce4c7cfd97b55bfe6f50b9def1/classes.dex" />
     </item>
     <item
@@ -106,7 +106,7 @@
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="d8d0ff554ce950710b6da8b1869c829bad2b59e3">
+        sha1="0fbb5b53bc4f3690e5899707f7d003eb299e1691">
         <dex dex="/Users/xzy/Documents/coder/android/myProject/WordIdtyAndCltn/wordCollection/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_34b743fa09edfcf3c032d346cff7076fb94ab707/classes.dex" />
     </item>
 

@@ -2,7 +2,10 @@ package com.example.xzy.wordidtyandcltn.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -55,6 +58,8 @@ public class SelectAreaActivity extends BaseActivity implements View.OnClickList
     private TextView tvDelete;
     private RelativeLayout rl;
     private RelativeLayout emptyToCemara;
+    private ImageView emptyIv1;
+    private ImageView emptyIv2;
 
     //view
     private CustomScrollView mCustomScrollView;
@@ -70,6 +75,7 @@ public class SelectAreaActivity extends BaseActivity implements View.OnClickList
 
     //constant
     private final static int TAKE_PHOTO_REQUEST = 0;
+    private final static int ALBUM_IMAGE_REQUEST = 4;
     private final static int UPLOAD_SCCESS = 1;
     private final static int UPLOAD_FAILD = 2;
     private final static int RESPONSE_DATA = 3;
@@ -84,7 +90,7 @@ public class SelectAreaActivity extends BaseActivity implements View.OnClickList
     private List<WordsInfo> wordsList = new ArrayList<>();
 
     //controller
-    private boolean isFakeData = true;
+    private boolean isFakeData = false;
 
 
 
@@ -113,11 +119,15 @@ public class SelectAreaActivity extends BaseActivity implements View.OnClickList
         tvDelete = findViewById(R.id.area_clear);
         tvDelete.setOnClickListener(this);
         tvConfirm.setOnClickListener(this);
-        emptyToCemara.setOnClickListener(this);
+//        emptyToCemara.setOnClickListener(this);
 
         mCustomScrollView.setVisibility(View.GONE); //默认展示空图片
         emptyToCemara.setVisibility(View.VISIBLE);
 
+        emptyIv1 = findViewById(R.id.empty_iv);
+        emptyIv2 = findViewById(R.id.empty_iv2);
+        emptyIv1.setOnClickListener(this);
+        emptyIv2.setOnClickListener(this);
     }
 
 
@@ -170,18 +180,48 @@ public class SelectAreaActivity extends BaseActivity implements View.OnClickList
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
         switch (requestCode) {
-            case TAKE_PHOTO_REQUEST:
+            case TAKE_PHOTO_REQUEST:    //相机返回
                 if (data != null) {
-                    Bitmap photo = data.getParcelableExtra("data");
-                    photoHeight = photo.getHeight();
-                    photoWidth = photo.getWidth();
-                    Log.d("xzyPxel-size", PicUtils.getBitmapBytes(photo) + "");
-                    Log.d("xzyPxel-pixelSize", PicUtils.getBitmapPixelSize(photo) + "");
-                    Log.d("xzyPxel-height", UIUtility.dip2px(this,photoHeight) + "");
-                    Log.d("xzyPxel-width", UIUtility.dip2px(this,photoWidth) + "");
-                    uploadPic(photo);
+//                    Bitmap photo = data.getParcelableExtra("data");
+                    Bitmap photo = (Bitmap) data.getExtras().get("data");
+//                    photoHeight = photo.getHeight();
+//                    photoWidth = photo.getWidth();
+//                    Log.d("xzyPxel-size", PicUtils.getBitmapBytes(photo) + "");
+//                    Log.d("xzyPxel-pixelSize", PicUtils.getBitmapPixelSize(photo) + "");
+//                    Log.d("xzyPxel-height", UIUtility.dip2px(this,photoHeight) + "");
+//                    Log.d("xzyPxel-width", UIUtility.dip2px(this,photoWidth) + "");
+                    String photoAfterB64 = Base64Help.bitmapToBase64(photo);
+                    uploadPic(photoAfterB64);
                     iviv.setImageBitmap(photo);
+                }
+                break;
+
+            case ALBUM_IMAGE_REQUEST:   //相册返回
+                if (resultCode == RESULT_OK && data != null) {//resultcode是setResult里面设置的code值
+
+                    try {
+                        String path = "";
+                        Uri selectedImage = data.getData(); //获取系统返回的照片的Uri
+                        String[] filePathColumn = {MediaStore.Images.Media.DATA};
+                        Cursor cursor = getContentResolver().query(selectedImage,
+                                filePathColumn, null, null, null);//从系统表中查询指定Uri对应的照片
+                        cursor.moveToFirst();
+                        int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                        path = cursor.getString(columnIndex);  //获取照片路径
+                        cursor.close();
+                        Bitmap bitmap = BitmapFactory.decodeFile(path);
+
+                        String albumAfterB64 = Base64Help.imageToBase64(path);
+                        uploadPic(albumAfterB64);
+                        iviv.setImageBitmap(bitmap);
+
+
+                    } catch (Exception e) {
+                        // TODO Auto-generatedcatch block
+                        e.printStackTrace();
+                    }
                 }
                 break;
         }
@@ -210,9 +250,15 @@ public class SelectAreaActivity extends BaseActivity implements View.OnClickList
                 }
                 break;
 
-            case R.id.empty_goto_camera:
+            case R.id.empty_iv: //跳转相机
                 Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(i,TAKE_PHOTO_REQUEST);
+                break;
+            case R.id.empty_iv2: //跳转相册
+                Intent intent = new Intent(Intent.ACTION_PICK,
+                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent, ALBUM_IMAGE_REQUEST);
+
                 break;
         }
 
@@ -251,10 +297,13 @@ public class SelectAreaActivity extends BaseActivity implements View.OnClickList
     }
 
 
+    private void uploadPic(String albumOrCameraAfterB64 ) {
 
-    private void uploadPic(final Bitmap photoBitmap) {
-        final String photoAfterB64 = Base64Help.bitmapToBase64(photoBitmap);
-        Log.d("xzyupload", "photoAfterB64 is   "+photoAfterB64);
+        final String photoAfterB64 = albumOrCameraAfterB64;
+
+
+
+        Log.d("xzyupload", "photoAfterB64 is   " + photoAfterB64);
         final String curtime = getCurTime();
 
         //检测base64编码是否成功
@@ -282,6 +331,7 @@ public class SelectAreaActivity extends BaseActivity implements View.OnClickList
                     urlConnection.setDoInput(true);//设置这个连接是否可以写入数据
                     urlConnection.setDoOutput(true);//设置这个连接是否可以输出数据
                     urlConnection.setRequestMethod("POST");//设置请求的方式
+                    Log.d("xzyupload", 111111 + "");
 
 
                     //设置请求头
@@ -295,12 +345,12 @@ public class SelectAreaActivity extends BaseActivity implements View.OnClickList
                     //当前UTC时间戳，从1970年1月1日0点0 分0 秒开始到现在的秒数
                     urlConnection.setRequestProperty("X-Param", xParam);
                     //相关参数JSON串经Base64编码后的字符串，见各接口详细说明
-                    urlConnection.setRequestProperty("X-CheckSum", UIUtility.md5(API_KEY+curtime+xParam));
+                    urlConnection.setRequestProperty("X-CheckSum", UIUtility.md5(API_KEY + curtime + xParam));
                     //令牌，计算方法：MD5(apiKey + curTime + param)，三个值拼接的字符串，进行MD5哈希计算（32位小写），其中apiKey由讯飞提供，调用方管理。
+                    Log.d("xzyupload", 2222222 + "");
 
 
-
-                    urlConnection.connect();// 连接，从上述至此的配置必须要在connect之前完成，实际上它只是建立了一个与服务器的TCP连接
+//                    urlConnection.connect();// 连接，从上述至此的配置必须要在connect之前完成，实际上它只是建立了一个与服务器的TCP连接
                     JSONObject json = new JSONObject();//创建json对象
                     json.put("image", URLEncoder.encode(photoAfterB64, "UTF-8"));//使用URLEncoder.encode对特殊和不可见字符进行编码
 
@@ -320,8 +370,9 @@ public class SelectAreaActivity extends BaseActivity implements View.OnClickList
                     bw.flush();//刷新缓冲区，把数据发送出去，这步很重要
                     out.close();
                     bw.close();//使用完关闭
+                    Log.d("xzyupload", 3333333 + "");
 
-                    if(urlConnection.getResponseCode()==HttpURLConnection.HTTP_OK){//得到服务端的返回码是否连接成功
+                    if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {//得到服务端的返回码是否连接成功
                         //------------字节流读取服务端返回的数据------------
                         //InputStream in = urlConnection.getInputStream();//用输入流接收服务端返回的回应数据
                         //BufferedInputStream bis = new BufferedInputStream(in);//高效缓冲流包装它，这里用的是字节流来读取数据的，当然也可以用字符流
@@ -336,31 +387,34 @@ public class SelectAreaActivity extends BaseActivity implements View.OnClickList
                         //Log.d("xzy", buffer.toString());//{"json":true}
                         //JSONObject rjson = new JSONObject(buffer.toString());//把返回来的json编码格式的字符串数据转化成json对象
                         //------------字符流读取服务端返回的数据------------
+                        Log.d("xzyupload", "3.53.5.35.3.5");
+
                         InputStream in = urlConnection.getInputStream();
                         BufferedReader br = new BufferedReader(new InputStreamReader(in));
                         String str = null;
                         StringBuffer buffer = new StringBuffer();
-                        while((str = br.readLine())!=null){//BufferedReader特有功能，一次读取一行数据
+                        while ((str = br.readLine()) != null) {//BufferedReader特有功能，一次读取一行数据
                             buffer.append(str);
                         }
                         in.close();
                         br.close();
                         String result = buffer.toString();
-
+                        Log.d("xzyupload", 4444444 + "");
 
 
                         //假数据
                         if (isFakeData) {
-                            result =  "{code:0,data:{block:[{line:[{confidence: 1," +
+                            result = "{code:0,data:{block:[{line:[{confidence: 1," +
                                     "word: [{content: I'm,location: {right_bottom: {y: 28,x: " +
                                     "18},top_left: {y: 0,x: 0}}}],location: {right_bottom: {y: 28,x: 478}," +
                                     "top_left: {y: 0,x: 0}}}],type: text}]},sid: wcr00000009@ch0fc40d9e4cdf000100," +
                                     "desc: success}";
                         }
+                        Log.d("xzyupload", 5555555 + "");
 
 
                         JSONObject rjson = new JSONObject(result);
-                        Log.d("xzyupload", "rjson="+rjson);//rjson={"json":true}
+                        Log.d("xzyupload", "rjson=" + rjson);//rjson={"json":true}
 
                         int resCode = rjson.getInt("code");     //解析code字段
                         if (resCode != 0) {
@@ -373,7 +427,7 @@ public class SelectAreaActivity extends BaseActivity implements View.OnClickList
                         mHandler.sendMessage(m);
 
 
-
+                        Log.d("xzyupload", 666666 + "");
 
 
 //                boolean result = rjson.getBoolean("json");
@@ -382,14 +436,19 @@ public class SelectAreaActivity extends BaseActivity implements View.OnClickList
 //                }else{
 //                    mHandler.sendEmptyMessage(UPLOAD_FAILD);
 //                }
-                    }else{
+
+
+                    } else {
+                        Log.d("xzyupload", "连接失败了哦" + "");
                         mHandler.sendEmptyMessage(UPLOAD_FAILD);
+
                     }
                 } catch (Exception e) {
                     mHandler.sendEmptyMessage(UPLOAD_FAILD);
+
                     Log.d("xzyupload", e.getMessage());
 
-                }finally{
+                } finally {
                     urlConnection.disconnect();//使用完关闭TCP连接，释放资源
                 }
 
